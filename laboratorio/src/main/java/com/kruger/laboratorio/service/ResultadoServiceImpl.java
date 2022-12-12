@@ -59,6 +59,7 @@ public class ResultadoServiceImpl implements ResultadoService {
 	}
 
 	public String calculoRiesgo(Resultados resultado) {
+		
 		if(resultado.getPorcentaje_azucar() > 70 & resultado.getPorcentaje_grasa() > 88.5 & resultado.getPorcentaje_oxigeno()< 60) {
 			return ("ALTO");
 		}else if (

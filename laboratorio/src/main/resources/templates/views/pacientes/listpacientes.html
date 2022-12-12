@@ -29,7 +29,7 @@
 						<td th:text="${lpacientes.nombre}"></td>
 						<td th:text="${lpacientes.apellido}"></td>
 						<td th:text="${lpacientes.email}"></td>
-						<td> <a class="btn btn-succes btn-sm" th:href="@{/app/crearexamen} + ${lpacientes.id}" th:text="'AGREGAR EXAMENES'">
+						<td> <a class="btn btn-succes btn-sm" th:href="@{/app/crearexamen/}+${lpacientes.id}" th:text="'AGREGAR EXAMENES'">
 							</a>
 						</td>
 					</tr>
@@ -37,11 +37,6 @@
 			</table>
 		
 		</div>
-		
-		
-							
-		
-	
 	<!-- PIE DE  PAGINA -->
 
 	<footer th:replace="plantilla/template :: footer"> </footer>

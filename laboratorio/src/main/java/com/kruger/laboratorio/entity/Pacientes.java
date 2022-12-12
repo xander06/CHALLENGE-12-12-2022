@@ -18,6 +18,10 @@ import lombok.NoArgsConstructor;
 @Data
 public class Pacientes {
 
+	public Pacientes(int i, String apellido, String nombre, String email) {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Id	@Column( unique = true)
 	private Long id;
 	private String nombre;

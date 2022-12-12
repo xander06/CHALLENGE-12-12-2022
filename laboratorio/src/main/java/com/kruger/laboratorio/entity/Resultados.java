@@ -26,6 +26,11 @@ import lombok.NonNull;
 @Data
 public class Resultados {
 
+	
+	public Resultados(Long id, @NonNull Double porcentaje_azucar, @NonNull Double porcentaje_grasa,
+			@NonNull Double porcentaje_oxigeno,@NonNull LocalDateTime fec_examen) {
+	}
+
 	@Id	
 	@Column( unique = true)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

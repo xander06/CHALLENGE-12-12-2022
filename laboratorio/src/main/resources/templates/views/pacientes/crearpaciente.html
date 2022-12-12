@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head">
+</head>
+<body>
+	<!-- NAVEGACION -->
+	<header th:replace="plantilla/template :: header"></header>
+	<!-- CONTENIDO -->
+	<div class="container">
+		<div class="card">
+			<div class="card-header">
+				<div class="card-body"></div>
+				<form action="#" class="row g-3" th:action="@{/app/guardarpaciente}" th:object="${cpaciente}"  method="post">
+					<h3>Formulario Registro de Paciente</h3>
+					<p>Por favor ingrese los datos</p>
+					<div class="col-md-6">
+
+						<label class="form-label">CEDULA</label> <input type="text"
+							class="form-control" id="cedula" required th:field="*{id}" placeholder="Ingrese documento de identificación">
+					</div>
+					<div class="col-md-6">
+						<label for="apellidos" class="form-label">Apellidos</label> <input
+							type="text" class="form-control" id="apellidos" required  th:field="*{apellido}" placeholder="Ingrese los Apellidos del Paciente">
+					</div>
+					<div class="col-md-6">
+						<label for="nombres" class="form-label">Nombres</label> <input
+							type="text" class="form-control" id="nombre" required th:field="*{nombre}" placeholder="Ingrese los Nombres del Paciente">
+					</div>
+					<div class="col-md-6">
+						<label for="email" class="form-label">Email</label> <input
+							type="email" class="form-control" id="email" required th:field="*{email}" placeholder="Ingrese el correo electronico del Paciente">
+					</div>
+					<div class="card-footer">
+						<input type="submit" class="btn btn-primary" value="Guardar"/>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- PIE DE  PAGINA -->
+
+	<footer th:replace="plantilla/template :: footer"> </footer>
+</body>
+</html>

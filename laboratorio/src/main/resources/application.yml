@@ -1,0 +1,26 @@
+logging:
+  level:
+    org:
+      hibernate:
+        sql: debug
+spring:
+  cloud:
+    config:
+      profile : dev
+  application:
+    name : laboratorio  
+  datasource:
+    password: kruger
+    url: jdbc:postgresql://localhost:5432/laboratorio?serverTimezone=America/Guayaquil
+    username: jpakrug
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+       format-sql: true
+    show-sql: true
+#server:
+#  port: 7777

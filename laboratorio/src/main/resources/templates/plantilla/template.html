@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+<meta charset="UTF-8">
+<title>Examenes Laboratorio</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<!-- NAVEGACION -->
+<header th:fragment="header">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-center">
+<div class="container">
+  <div class="container-fluid">
+   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+       <a class="nav-link active" aria-current="page" href="/app/home">Home</a>
+        <a class="nav-link" aria-current="page" href="/app/listarpacientes">Pacientes</a>
+        <a class="nav-link" href="/app/listaresultados">Examenes</a>
+       </div>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+  </div>
+</nav>
+
+</header>
+<!-- CONTENIDO -->
+<div class=container></div>
+<!-- PIE DE  PAGINA -->
+
+ <footer th:fragment="footer" class="bg-dark text-white text-center fixed-bottom">
+ <div class="container">
+ <p>Copyright XANDER06  KRUGER 2022</p>
+ 
+ 
+ <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+ </div>
+ </footer>
+ 
+</body>
+</html>

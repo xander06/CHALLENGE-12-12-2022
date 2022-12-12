@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head" >
+</head>
+<body>
+
+<!-- NAVEGACION -->
+<header  th:replace="plantilla/template :: header"></header>
+
+<!-- CONTENIDO -->
+<div class="container">
+<h1>LISTADO DE TODOS LOS RESULTADOS</h1>
+<table th:if="${not listresultados.isEmpty()}" class="table table-hover">
+		<thead class="text-center">
+			<tr>
+				<th>Fecha Examen</th>
+				<th>Porcentaje Azucar</th>
+				<th>Porcentaje Grasa</th>
+				<th>Porcentaje Oxigeno</th>
+				<th>Riesgo</th>
+				</tr>
+		</thead>
+		<tbody class="text-center">
+			<tr th:each="lresult: ${listresultados}">
+				<td th:text="${lresult.fec_examen}"></td>
+				<td th:text="${lresult.porcentaje_azucar}"></td>
+				<td th:text="${lresult.porcentaje_grasa}"></td>
+				<td th:text="${lresult.porcentaje_oxigeno}"></td>
+				<td th:text="${lresult.riesgo}"></td>
+				
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<!-- PIE DE  PAGINA -->
+
+ <footer th:replace="plantilla/template :: footer">
+  </footer>
+</body>
+</html>

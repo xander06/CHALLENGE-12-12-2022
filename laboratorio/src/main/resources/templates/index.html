@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head" >
+</head>
+<body>
+<!-- NAVEGACION -->
+<header  th:replace="plantilla/template :: header"></header>
+<!-- CONTENIDO -->
+<div class=container>
+<h1>CHALLENGE FINAL BACKEND</h1>
+<p class="text-md-start text-justify fs-3">
+En un prestigioso laboratorio de la ciudad, un grupo de científicos,
+espera encontrar la cura contra una enfermedad infecciosa que lleva
+algunos años y afecta las vías respiratorias de los pacientes; uno de
+los científicos encontró al examinar la sangre de los pacientes, que los
+que tenían porcentaje de azúcar mayor a 70%, porcentaje de grasa
+mayor a 88.5% y porcentaje de oxígeno menor al 60% tenían un
+riesgo ALTO de enfermar gravemente; los que tenían porcentaje de
+azúcar entre 50% y 70% , porcentaje de grasa entre 62.2% y 88.5%, y
+porcentaje de oxígeno entre 60% y 70% tenían un riesgo MEDIO de
+enfermar gravemente; los que tenían porcentaje de azúcar menor a
+50%, porcentaje de grasa menor a 62.2% y porcentaje de oxígeno
+mayor a 70% tienen un riesgo BAJO de enfermar gravemente. Es
+importante entender que el porcentaje de cada uno de los valores
+debe ser un porcentaje válido [0-100], en caso de no serlo debe
+retroalimentar al usuario con el error.</p>
+</div>
+<!-- PIE DE  PAGINA -->
+
+ <footer th:replace="plantilla/template :: footer">
+  </footer>
+</body>
+</html>

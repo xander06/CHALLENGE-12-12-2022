@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head">
+</head>
+<body>
+
+	<!-- NAVEGACION -->
+	<header th:replace="plantilla/template :: header"></header>
+
+	<!-- CONTENIDO -->
+
+	<div class=container>
+		<h1>LISTADO PACIENTES</h1>
+		<a class="btn btn-succes" href="/app/crearpaciente"  th:text="'CREAR NUEVO PACIENTE'" title="CREAR NUEVO PACIENTE"></a>  
+			<table class="table table-hover" th:if="${not listpacientes.isEmpty()}">
+				<thead class="text-center">
+					<tr>
+						<th>Cedula</th>
+						<th>Nombre</th>
+						<th>Apellido</th>
+						<th>Email</th>
+						<th>Examenes</th>
+						<th>Agregar</th>
+					</tr>
+				</thead>
+				<tbody class="text-center">
+					<tr th:each="lpacientes: ${listpacientes}">
+						<td th:text="${lpacientes.id}"></td>
+						<td th:text="${lpacientes.nombre}"></td>
+						<td th:text="${lpacientes.apellido}"></td>
+						<td th:text="${lpacientes.email}"></td>
+						<td> <a class="btn btn-succes btn-sm" th:href="@{/app/crearexamen} + ${lpacientes.id}" th:text="'AGREGAR EXAMENES'">
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		
+		</div>
+		
+		
+							
+		
+	
+	<!-- PIE DE  PAGINA -->
+
+	<footer th:replace="plantilla/template :: footer"> </footer>
+</body>
+</html>

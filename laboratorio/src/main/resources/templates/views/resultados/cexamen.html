@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="plantilla/template :: head">
+</head>
+<body>
+	<!-- NAVEGACION -->
+	<header th:replace="plantilla/template :: header"></header>
+	<!-- CONTENIDO -->
+	<div class="container">
+		<div class="card">
+			<div class="card-header">
+				<div class="card-body"></div>
+				
+				<form action="#" class="row g-3" th:action="@{/app/guardarexamen}" th:object="${svresultado}" method="post">
+					<table class="table table-hover" >
+				<thead class="text-center">
+					<tr>
+									
+						<th>Cedula</th>
+						<th>Nombre</th>
+						<th>Apellido</th>
+						<th>Email</th>
+					</tr>
+				</thead>
+				<tbody class="text-center">
+					<tr th:each="sresultado: ${svresultado}">
+						<td class="form-label" th:text="${sresultado.paciente.id}"></td>
+						<td class="form-label" th:text="${sresultado.paciente.apellido}"></td>
+						<td class="form-label" th:text="${sresultado.paciente.nombre}"></td>
+						<td class="form-label" th:text="${sresultado.paciente.email}"></td>
+				</tbody>
+			</table>
+					<h3>Formulario Registro Datos Examen</h3>
+					<p>Por Favor ingrese los  Valores</p>
+					
+					
+					<div class="col-md-6">
+
+						<label  class="form-label">CEDULA</label> <input type="text"
+							class="form-control" id="paciente.id" required th:field="*{paciente.id}" placeholder="Cedula" >
+					</div>
+										<div class="col-md-6">
+
+						<label  class="form-label">APELLIDO</label> <input type="text"
+							class="form-control" id="paciente.apellido" required th:field="*{paciente.apellido}" placeholder="Apellido" >
+					</div>
+										<div class="col-md-6">
+
+						<label  class="form-label">NOMBRE</label> <input type="text"
+							class="form-control" id="paciente.nombre" required th:field="*{paciente.nombre}" placeholder="Nombre" >
+					</div>
+											<div class="col-md-6">
+
+						<label  class="form-label">CORREO</label> <input type="text"
+							class="form-control" id="paciente.email" required th:field="*{paciente.email}" placeholder="Correo Elecronico" >
+					</div>
+					
+					
+					<div class="col-md-6">
+
+						<label  class="form-label">Fecha</label> <input type="datetime-local"
+							class="form-control" id="fec_examen" required th:field="*{fec_examen}" placeholder="Ingrese la Fecha">
+					</div>
+					<div class="col-md-6">
+						<label for="porcentaje_azucar" class="form-label">Porcentaje Azuzar</label> <input
+							type="number" class="form-control" id="porcentaje_azucar" required  th:field="*{porcentaje_azucar}" placeholder="Ingrese porcentaje de Azucar">
+					</div>
+					<div class="col-md-6">
+						<label for="porcentaje_grasa" class="form-label">Porcentaje Grasa</label> <input
+							type="number" class="form-control" id="porcentaje_grasa" required th:field="*{porcentaje_grasa}" placeholder="Ingrese porcentaje de Grasa">
+					</div>
+					<div class="col-md-6">
+						<label for="porcentaje_oxigeno" class="form-label">Porcentaje Oxigeno</label> <input
+							type="number" class="form-control" id="porcentaje_oxigeno" required th:field="*{porcentaje_oxigeno}" placeholder="Ingrese porcentaje de Oxigeno">
+					</div>
+					<div class="card-footer">
+						<input type="submit" class="btn btn-primary" value="Guardar"/>
+					</div>
+					
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- PIE DE  PAGINA -->
+
+	<footer th:replace="plantilla/template :: footer"> </footer>
+</body>
+</html>
